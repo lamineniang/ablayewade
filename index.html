@@ -192,13 +192,14 @@
     letter-spacing: -0.05em; position: relative;
   }
   .portrait-badge {
-    position: absolute; bottom: -12px; right: -12px;
+    position: absolute; bottom: 12px; right: 12px;
     background: var(--or); color: var(--noir);
     font-family: 'Playfair Display', serif;
     font-size: 2.5rem; font-weight: 900;
     width: 90px; height: 90px; border-radius: 50%;
     display: flex; flex-direction: column; align-items: center; justify-content: center;
-    line-height: 1; box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    line-height: 1; box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    z-index: 2;
   }
   .portrait-badge small { font-size: 0.55rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; }
   .portrait-caption {
