@@ -1,0 +1,1216 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abdoulaye Wade — L'Homme, Le Siècle, La Légende</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --vert:   #00853F;
+    --or:     #FDEF42;
+    --rouge:  #E31E24;
+    --noir:   #1A1A1A;
+    --creme:  #FDF8EE;
+    --sable:  #F0E9D2;
+    --or-fonce: #B8860B;
+    --vert-fonce: #005C2B;
+    --rouge-fonce: #9B0F14;
+    --text-dark: #1a1208;
+    --text-muted: #5a5040;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Source Sans 3', sans-serif;
+    background: var(--creme);
+    color: var(--text-dark);
+    overflow-x: hidden;
+  }
+
+  /* ─── NAV ─────────────────────────────────────── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 999;
+    background: var(--noir);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 2rem; height: 60px;
+    border-bottom: 3px solid var(--or);
+  }
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    color: var(--or); font-size: 1.1rem; font-weight: 700;
+    letter-spacing: 0.02em;
+  }
+  .nav-links { display: flex; gap: 0; }
+  .nav-links a {
+    color: rgba(255,255,255,0.7); text-decoration: none;
+    font-size: 0.78rem; font-weight: 600; letter-spacing: 0.08em;
+    text-transform: uppercase; padding: 0 1rem; height: 60px;
+    display: flex; align-items: center;
+    border-bottom: 3px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+    margin-bottom: -3px;
+  }
+  .nav-links a:hover, .nav-links a.active {
+    color: var(--or); border-bottom-color: var(--or);
+  }
+  .nav-flag { display: flex; gap: 2px; align-items: center; }
+  .nav-flag span { width: 8px; height: 22px; border-radius: 2px; }
+
+  /* ─── HERO ─────────────────────────────────────── */
+  #hero {
+    min-height: 100vh; padding-top: 60px;
+    background: var(--noir);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    position: relative; overflow: hidden;
+  }
+  .hero-bg-stripes {
+    position: absolute; inset: 0; display: flex; opacity: 0.06;
+  }
+  .hero-bg-stripes div { flex: 1; }
+  .hero-bg-stripes div:nth-child(1) { background: var(--vert); }
+  .hero-bg-stripes div:nth-child(2) { background: #fff; }
+  .hero-bg-stripes div:nth-child(3) { background: var(--rouge); }
+  .hero-star {
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 28rem; opacity: 0.03; color: var(--or);
+    pointer-events: none; user-select: none;
+    animation: pulse-star 6s ease-in-out infinite;
+  }
+  @keyframes pulse-star {
+    0%,100% { opacity: 0.03; transform: translate(-50%,-50%) scale(1); }
+    50% { opacity: 0.055; transform: translate(-50%,-50%) scale(1.05); }
+  }
+  .hero-content { position: relative; text-align: center; padding: 2rem; }
+  .hero-eyebrow {
+    color: var(--or); font-size: 0.8rem; font-weight: 600;
+    letter-spacing: 0.25em; text-transform: uppercase;
+    margin-bottom: 1.2rem;
+    display: flex; align-items: center; justify-content: center; gap: 1rem;
+  }
+  .hero-eyebrow::before, .hero-eyebrow::after {
+    content: ''; display: block; width: 40px; height: 1px; background: var(--or); opacity: 0.5;
+  }
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.8rem, 8vw, 6.5rem);
+    font-weight: 900; color: #fff;
+    line-height: 1.0; letter-spacing: -0.02em;
+    margin-bottom: 0.3rem;
+  }
+  .hero-title span { color: var(--or); }
+  .hero-subtitle {
+    font-family: 'Playfair Display', serif;
+    font-style: italic; font-size: clamp(1.1rem, 3vw, 1.8rem);
+    color: rgba(255,255,255,0.55); margin-bottom: 2rem;
+  }
+  .hero-dates {
+    display: flex; gap: 2rem; justify-content: center; margin-bottom: 2.5rem;
+  }
+  .hero-date-item { text-align: center; }
+  .hero-date-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem; font-weight: 700; color: var(--or); display: block;
+  }
+  .hero-date-label {
+    font-size: 0.72rem; font-weight: 600; color: rgba(255,255,255,0.4);
+    letter-spacing: 0.12em; text-transform: uppercase;
+  }
+  .hero-divider { width: 1px; height: 50px; background: rgba(255,255,255,0.15); align-self: center; }
+  .hero-cta {
+    display: inline-flex; align-items: center; gap: 0.6rem;
+    background: var(--or); color: var(--noir);
+    font-weight: 700; font-size: 0.85rem; letter-spacing: 0.1em;
+    text-transform: uppercase; text-decoration: none;
+    padding: 0.85rem 2rem; border-radius: 2px;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .hero-cta:hover { background: #ffe500; transform: translateY(-2px); }
+  .hero-scroll { margin-top: 3rem; animation: bounce 2s ease-in-out infinite; }
+  @keyframes bounce { 0%,100% { transform: translateY(0); } 50% { transform: translateY(8px); } }
+  .hero-scroll span { color: rgba(255,255,255,0.3); font-size: 1.6rem; }
+
+  /* ─── SECTION BASE ─────────────────────────────── */
+  section { padding: 5rem 2rem; }
+  .container { max-width: 1100px; margin: 0 auto; }
+  .section-tag {
+    display: inline-block;
+    font-size: 0.7rem; font-weight: 700; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--vert);
+    border-left: 3px solid var(--vert); padding-left: 0.7rem;
+    margin-bottom: 0.8rem;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.9rem, 4vw, 2.8rem);
+    font-weight: 700; line-height: 1.15; color: var(--text-dark);
+    margin-bottom: 1rem;
+  }
+  .section-lead {
+    font-size: 1.1rem; color: var(--text-muted);
+    max-width: 600px; line-height: 1.7;
+    margin-bottom: 3rem;
+  }
+
+  /* ─── INTRO ─────────────────────────────────────── */
+  #intro { background: var(--creme); }
+  .intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+  .intro-portrait {
+    position: relative;
+  }
+  .portrait-frame {
+    width: 100%; aspect-ratio: 3/4; max-width: 340px;
+    background: linear-gradient(145deg, var(--vert-fonce), var(--vert));
+    border-radius: 4px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: center;
+    position: relative; overflow: hidden;
+  }
+  .portrait-frame::before {
+    content: ''; position: absolute; inset: 0;
+    background: repeating-linear-gradient(
+      45deg, rgba(255,255,255,0.03) 0, rgba(255,255,255,0.03) 1px,
+      transparent 1px, transparent 12px
+    );
+  }
+  .portrait-initials {
+    font-family: 'Playfair Display', serif;
+    font-size: 6rem; font-weight: 900; color: rgba(255,255,255,0.15);
+    letter-spacing: -0.05em; position: relative;
+  }
+  .portrait-badge {
+    position: absolute; bottom: -12px; right: -12px;
+    background: var(--or); color: var(--noir);
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem; font-weight: 900;
+    width: 90px; height: 90px; border-radius: 50%;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    line-height: 1; box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  }
+  .portrait-badge small { font-size: 0.55rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; }
+  .portrait-caption {
+    text-align: center; margin-top: 2rem;
+    font-size: 0.78rem; color: var(--text-muted);
+    letter-spacing: 0.05em;
+  }
+  .intro-text .big-quote {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem; font-style: italic;
+    color: var(--vert-fonce); line-height: 1.5;
+    border-left: 4px solid var(--or); padding-left: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .intro-text p { font-size: 1.02rem; line-height: 1.8; color: var(--text-muted); margin-bottom: 1rem; }
+  .info-pills { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.5rem; }
+  .pill {
+    background: var(--sable); border: 1px solid rgba(0,133,63,0.2);
+    border-radius: 2px; padding: 0.35rem 0.8rem;
+    font-size: 0.78rem; font-weight: 600; color: var(--vert-fonce);
+  }
+
+  /* ─── TIMELINE ─────────────────────────────────── */
+  #timeline { background: var(--noir); color: #fff; }
+  #timeline .section-tag { color: var(--or); border-left-color: var(--or); }
+  #timeline .section-title { color: #fff; }
+  #timeline .section-lead { color: rgba(255,255,255,0.5); }
+
+  .tl-filter-bar {
+    display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 3rem;
+  }
+  .tl-filter {
+    padding: 0.45rem 1.1rem; border-radius: 2px; border: 1px solid rgba(255,255,255,0.15);
+    background: transparent; color: rgba(255,255,255,0.5);
+    font-size: 0.78rem; font-weight: 600; letter-spacing: 0.08em;
+    text-transform: uppercase; cursor: pointer; transition: all 0.2s;
+  }
+  .tl-filter:hover { border-color: var(--or); color: var(--or); }
+  .tl-filter.active { background: var(--or); color: var(--noir); border-color: var(--or); }
+
+  .tl-track {
+    position: relative;
+    padding-left: 2.5rem;
+  }
+  .tl-track::before {
+    content: ''; position: absolute; left: 8px; top: 0; bottom: 0;
+    width: 1px; background: rgba(255,255,255,0.1);
+  }
+  .tl-item {
+    position: relative; margin-bottom: 2.5rem;
+    transition: opacity 0.3s;
+  }
+  .tl-item.hidden { display: none; }
+  .tl-dot {
+    position: absolute; left: -2.5rem; top: 4px;
+    width: 16px; height: 16px; border-radius: 50%;
+    border: 2px solid;
+    background: var(--noir);
+    transition: transform 0.2s;
+  }
+  .tl-item:hover .tl-dot { transform: scale(1.4); }
+  .tl-dot.politique { border-color: var(--or); background: var(--or); }
+  .tl-dot.jeunesse { border-color: var(--vert); }
+  .tl-dot.pouvoir { border-color: var(--rouge); background: var(--rouge); }
+  .tl-dot.realisation { border-color: #7dd3fc; }
+  .tl-dot.chute { border-color: rgba(255,255,255,0.3); }
+
+  .tl-year {
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.15em;
+    color: var(--or); text-transform: uppercase; margin-bottom: 0.3rem;
+  }
+  .tl-head {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem; font-weight: 700; color: #fff; margin-bottom: 0.4rem;
+  }
+  .tl-body {
+    font-size: 0.92rem; line-height: 1.7; color: rgba(255,255,255,0.55);
+    max-width: 600px;
+  }
+  .tl-tag {
+    display: inline-block; font-size: 0.65rem; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 0.2rem 0.6rem; border-radius: 2px; margin-bottom: 0.4rem;
+  }
+  .tl-tag.politique { background: rgba(253,239,66,0.15); color: var(--or); }
+  .tl-tag.jeunesse { background: rgba(0,133,63,0.2); color: #6ee7b7; }
+  .tl-tag.pouvoir { background: rgba(227,30,36,0.2); color: #fca5a5; }
+  .tl-tag.realisation { background: rgba(125,211,252,0.15); color: #7dd3fc; }
+  .tl-tag.chute { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.4); }
+
+  /* ─── REALISATIONS ─────────────────────────────── */
+  #realisations { background: var(--sable); }
+  .real-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem;
+  }
+  .real-card {
+    background: #fff; border-radius: 4px;
+    border-top: 4px solid var(--vert);
+    padding: 1.5rem; position: relative;
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: default;
+  }
+  .real-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.1); }
+  .real-card.or { border-top-color: var(--or-fonce); }
+  .real-card.rouge { border-top-color: var(--rouge); }
+  .real-icon { font-size: 2.2rem; margin-bottom: 0.8rem; }
+  .real-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.5rem;
+  }
+  .real-body { font-size: 0.88rem; line-height: 1.65; color: var(--text-muted); }
+  .real-stat {
+    margin-top: 1rem; padding-top: 1rem;
+    border-top: 1px solid rgba(0,0,0,0.07);
+    font-size: 0.75rem; font-weight: 700; color: var(--vert);
+    letter-spacing: 0.05em; text-transform: uppercase;
+  }
+
+  /* ─── CITATIONS ─────────────────────────────────── */
+  #citations { background: var(--creme); }
+  .cit-nav {
+    display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 2.5rem;
+  }
+  .cit-btn {
+    padding: 0.45rem 1rem; border-radius: 2px;
+    border: 1px solid rgba(0,133,63,0.25);
+    background: transparent; color: var(--text-muted);
+    font-size: 0.78rem; font-weight: 600; letter-spacing: 0.06em;
+    text-transform: uppercase; cursor: pointer; transition: all 0.2s;
+  }
+  .cit-btn:hover { border-color: var(--vert); color: var(--vert); }
+  .cit-btn.active { background: var(--vert); color: #fff; border-color: var(--vert); }
+
+  .cit-carousel { position: relative; min-height: 280px; }
+  .cit-slide {
+    display: none; animation: fadeSlide 0.4s ease;
+  }
+  .cit-slide.active { display: block; }
+  @keyframes fadeSlide {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .cit-card {
+    background: #fff; border-radius: 4px; padding: 2.5rem;
+    border-left: 6px solid var(--or);
+    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+    position: relative;
+  }
+  .cit-card::before {
+    content: '\201C';
+    font-family: 'Playfair Display', serif;
+    font-size: 8rem; color: var(--or); opacity: 0.15;
+    position: absolute; top: -1rem; left: 1.5rem;
+    line-height: 1; pointer-events: none;
+  }
+  .cit-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.35rem; font-style: italic;
+    color: var(--text-dark); line-height: 1.6;
+    margin-bottom: 1.5rem; position: relative;
+  }
+  .cit-author {
+    display: flex; align-items: center; gap: 1rem;
+  }
+  .cit-avatar {
+    width: 48px; height: 48px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.1rem; font-weight: 700; flex-shrink: 0;
+  }
+  .cit-avatar.wade { background: var(--or); color: var(--noir); }
+  .cit-avatar.mandela { background: #1a5276; color: #fff; }
+  .cit-avatar.senghor { background: var(--vert-fonce); color: #fff; }
+  .cit-avatar.african { background: var(--rouge-fonce); color: #fff; }
+  .cit-avatar.philo { background: #4a1a6e; color: #fff; }
+  .cit-avatar.moral { background: var(--or-fonce); color: #fff; }
+  .cit-name { font-weight: 700; font-size: 0.95rem; color: var(--text-dark); }
+  .cit-role { font-size: 0.78rem; color: var(--text-muted); }
+  .cit-context {
+    margin-top: 1.2rem; padding-top: 1.2rem;
+    border-top: 1px solid rgba(0,0,0,0.07);
+    font-size: 0.85rem; color: var(--vert-fonce);
+    background: rgba(0,133,63,0.05); padding: 0.8rem 1rem;
+    border-radius: 2px;
+  }
+  .cit-context strong { color: var(--vert); }
+
+  /* ─── LEÇONS ─────────────────────────────────────── */
+  #lecons { background: var(--vert-fonce); color: #fff; }
+  #lecons .section-tag { color: var(--or); border-left-color: var(--or); }
+  #lecons .section-title { color: #fff; }
+  #lecons .section-lead { color: rgba(255,255,255,0.55); }
+
+  .lecon-tabs {
+    display: flex; gap: 0; border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+  }
+  .lecon-tab {
+    padding: 0.75rem 1.5rem; cursor: pointer;
+    font-size: 0.82rem; font-weight: 600; letter-spacing: 0.06em;
+    color: rgba(255,255,255,0.45); border-bottom: 3px solid transparent;
+    margin-bottom: -1px; transition: all 0.2s; text-transform: uppercase;
+    background: none; border-left: none; border-right: none; border-top: none;
+  }
+  .lecon-tab:hover { color: var(--or); }
+  .lecon-tab.active { color: var(--or); border-bottom-color: var(--or); }
+
+  .lecon-panel { display: none; }
+  .lecon-panel.active { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  .lecon-card {
+    background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 4px; padding: 1.5rem;
+    transition: background 0.2s;
+  }
+  .lecon-card:hover { background: rgba(255,255,255,0.1); }
+  .lecon-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem; font-weight: 900; color: var(--or); opacity: 0.3;
+    line-height: 1; margin-bottom: 0.5rem;
+  }
+  .lecon-title { font-weight: 700; font-size: 1rem; color: #fff; margin-bottom: 0.5rem; }
+  .lecon-body { font-size: 0.88rem; line-height: 1.7; color: rgba(255,255,255,0.6); }
+  .lecon-link {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    margin-top: 0.8rem; font-size: 0.78rem; font-weight: 700;
+    color: var(--or); cursor: pointer; text-decoration: none;
+    letter-spacing: 0.05em; text-transform: uppercase;
+  }
+
+  /* ─── PARCOURS VIE ─────────────────────────────── */
+  #parcours { background: var(--sable); }
+  .pv-stepper {
+    display: flex; gap: 0; margin-bottom: 2rem;
+    border-radius: 4px; overflow: hidden;
+    border: 1px solid rgba(0,0,0,0.1);
+  }
+  .pv-step-btn {
+    flex: 1; padding: 0.8rem 0.5rem; text-align: center;
+    background: #fff; border: none; cursor: pointer;
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.07em;
+    text-transform: uppercase; color: var(--text-muted);
+    border-right: 1px solid rgba(0,0,0,0.08);
+    transition: all 0.2s;
+  }
+  .pv-step-btn:last-child { border-right: none; }
+  .pv-step-btn:hover { background: var(--sable); color: var(--text-dark); }
+  .pv-step-btn.active { background: var(--vert); color: #fff; }
+
+  .pv-content { display: none; }
+  .pv-content.active { display: grid; grid-template-columns: 1fr 1.6fr; gap: 3rem; align-items: start; }
+  .pv-visual {
+    background: var(--vert-fonce); border-radius: 4px; padding: 2rem;
+    text-align: center; color: #fff;
+  }
+  .pv-icon-big { font-size: 4rem; margin-bottom: 1rem; }
+  .pv-visual-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem; font-weight: 700; color: var(--or); margin-bottom: 0.5rem;
+  }
+  .pv-visual-sub { font-size: 0.85rem; color: rgba(255,255,255,0.5); line-height: 1.6; }
+  .pv-text-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem; font-weight: 700; color: var(--text-dark); margin-bottom: 1rem;
+  }
+  .pv-text-body {
+    font-size: 0.98rem; line-height: 1.8; color: var(--text-muted); margin-bottom: 1rem;
+  }
+  .pv-highlight {
+    background: rgba(0,133,63,0.08); border-left: 3px solid var(--vert);
+    padding: 0.8rem 1rem; border-radius: 0 2px 2px 0;
+    font-size: 0.9rem; color: var(--vert-fonce); font-style: italic;
+    margin-top: 1rem;
+  }
+
+  /* ─── FOOTER ─────────────────────────────────────── */
+  footer {
+    background: var(--noir); color: rgba(255,255,255,0.4);
+    text-align: center; padding: 2.5rem 2rem;
+    border-top: 3px solid var(--vert);
+  }
+  .footer-flag { display: flex; height: 4px; margin-bottom: 1.5rem; }
+  .footer-flag div { flex: 1; }
+  .footer-flag div:nth-child(1) { background: var(--vert); }
+  .footer-flag div:nth-child(2) { background: #fdf; }
+  .footer-flag div:nth-child(3) { background: var(--rouge); }
+  footer p { font-size: 0.82rem; line-height: 1.8; }
+  footer strong { color: var(--or); }
+
+  /* ─── RESPONSIVE ─────────────────────────────────── */
+  @media (max-width: 768px) {
+    nav { padding: 0 1rem; }
+    .nav-links { gap: 0; }
+    .nav-links a { padding: 0 0.5rem; font-size: 0.65rem; }
+    .intro-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .lecon-panel.active { grid-template-columns: 1fr; }
+    .pv-content.active { grid-template-columns: 1fr; }
+    .pv-stepper { flex-wrap: wrap; }
+    .pv-step-btn { flex: 1 1 50%; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Wade · 1926 – ∞</div>
+  <div class="nav-links">
+    <a href="#intro">Portrait</a>
+    <a href="#timeline">Chronologie</a>
+    <a href="#realisations">Réalisations</a>
+    <a href="#citations">Citations</a>
+    <a href="#lecons">Leçons</a>
+    <a href="#parcours">Parcours</a>
+  </div>
+  <div class="nav-flag">
+    <span style="background:#00853F"></span>
+    <span style="background:#FDEF42; width:12px"></span>
+    <span style="background:#E31E24"></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg-stripes"><div></div><div></div><div></div></div>
+  <div class="hero-star">★</div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Le Pape du Sopi · Sénégal</div>
+    <h1 class="hero-title">Abdoulaye<br><span>Wade</span></h1>
+    <p class="hero-subtitle">« Le Lièvre » qui a traversé un siècle</p>
+    <div class="hero-dates">
+      <div class="hero-date-item">
+        <span class="hero-date-num">100</span>
+        <span class="hero-date-label">Ans de vie</span>
+      </div>
+      <div class="hero-divider"></div>
+      <div class="hero-date-item">
+        <span class="hero-date-num">26</span>
+        <span class="hero-date-label">Ans d'opposition</span>
+      </div>
+      <div class="hero-divider"></div>
+      <div class="hero-date-item">
+        <span class="hero-date-num">12</span>
+        <span class="hero-date-label">Ans au pouvoir</span>
+      </div>
+      <div class="hero-divider"></div>
+      <div class="hero-date-item">
+        <span class="hero-date-num">3</span>
+        <span class="hero-date-label">Doctorats</span>
+      </div>
+    </div>
+    <a href="#intro" class="hero-cta">Découvrir son parcours ↓</a>
+    <div class="hero-scroll"><span>↓</span></div>
+  </div>
+</section>
+
+<!-- INTRO / PORTRAIT -->
+<section id="intro">
+  <div class="container">
+    <div class="intro-grid">
+      <div class="intro-portrait">
+        <div class="portrait-frame">
+          <div class="portrait-initials">AW</div>
+          <div class="portrait-badge">
+            <span>100</span>
+            <small>ans</small>
+          </div>
+        </div>
+        <p class="portrait-caption">Né le 29 mai 1926 à Kébémer, Sénégal</p>
+        <div class="info-pills" style="justify-content:center; margin-top:1rem;">
+          <span class="pill">Avocat</span>
+          <span class="pill">Économiste</span>
+          <span class="pill">Président de la République</span>
+          <span class="pill">Fondateur du PDS</span>
+          <span class="pill">Père de l'alternance</span>
+        </div>
+      </div>
+      <div class="intro-text">
+        <div class="section-tag">Qui est-il ?</div>
+        <h2 class="section-title">Un paradoxe vivant nommé Wade</h2>
+        <div class="big-quote">
+          « Le Lièvre qui enterra ses adversaires et défie le temps »
+        </div>
+        <p>Entre génie visionnaire et tacticien machiavélique, Abdoulaye Wade reste ce paradoxe fascinant que Léopold Sédar Senghor surnommait <em>« Ndiomboor »</em> — le Lièvre. Père de la démocratie sénégalaise le jour, bâtisseur obstiné chaque nuit.</p>
+        <p>Fils d'un tailleur et tirailleur sénégalais, il gravit tous les échelons du savoir — de Kébémer à Paris — pour devenir avocat, économiste et homme d'État d'envergure continentale. Sa vie est un hymne à la résilience.</p>
+        <p>Avec une dualité shakespearienne — à la fois libérateur et autocrate, bâtisseur et rêveur obstiné —, il incarne ces figures dont l'héritage ne se lit jamais de manière linéaire.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section id="timeline">
+  <div class="container">
+    <div class="section-tag">Frise chronologique</div>
+    <h2 class="section-title">Cent ans d'une vie extraordinaire</h2>
+    <p class="section-lead">Filtrez par période pour explorer les moments clés qui ont façonné l'homme et le pays.</p>
+
+    <div class="tl-filter-bar">
+      <button class="tl-filter active" onclick="filterTL('all',this)">Tout voir</button>
+      <button class="tl-filter" onclick="filterTL('jeunesse',this)">Jeunesse & Formation</button>
+      <button class="tl-filter" onclick="filterTL('politique',this)">Opposition</button>
+      <button class="tl-filter" onclick="filterTL('pouvoir',this)">Au Pouvoir</button>
+      <button class="tl-filter" onclick="filterTL('realisation',this)">Réalisations</button>
+      <button class="tl-filter" onclick="filterTL('chute',this)">Après 2012</button>
+    </div>
+
+    <div class="tl-track" id="tl-track">
+
+      <div class="tl-item" data-cat="jeunesse">
+        <div class="tl-dot jeunesse"></div>
+        <div class="tl-tag jeunesse">Naissance</div>
+        <div class="tl-year">29 mai 1926 · Kébémer</div>
+        <div class="tl-head">Naissance dans le Sénégal colonial</div>
+        <div class="tl-body">Fils de Momar Tola Wade, tailleur et tirailleur sénégalais, et d'Aïssatou Dabo. Il naît sous domination française, dans une époque où les ambitions africaines étaient étouffées avant même d'éclore.</div>
+      </div>
+
+      <div class="tl-item" data-cat="jeunesse">
+        <div class="tl-dot jeunesse"></div>
+        <div class="tl-tag jeunesse">Formation</div>
+        <div class="tl-year">1947 · École William Ponty</div>
+        <div class="tl-head">Diplômé de l'école d'élite de Sébikotane</div>
+        <div class="tl-body">L'école William Ponty forgeait les futures élites africaines. Wade en sort diplômé et obtient une bourse pour la France — première étape d'un parcours académique exceptionnel.</div>
+      </div>
+
+      <div class="tl-item" data-cat="jeunesse">
+        <div class="tl-dot jeunesse"></div>
+        <div class="tl-tag jeunesse">Études</div>
+        <div class="tl-year">1947–1960 · France</div>
+        <div class="tl-head">Treize ans de conquête du savoir à Paris</div>
+        <div class="tl-body">Lycée Condorcet (mathématiques), puis double doctorat en économie (Grenoble) et en droit (Besançon). C'est à Besançon qu'il rencontre Viviane, sa future épouse, mère de Karim et Sindiély.</div>
+      </div>
+
+      <div class="tl-item" data-cat="jeunesse">
+        <div class="tl-dot jeunesse"></div>
+        <div class="tl-tag jeunesse">Barreau</div>
+        <div class="tl-year">8 mai 1958</div>
+        <div class="tl-head">Nommé avocat-défenseur près les tribunaux d'AOF</div>
+        <div class="tl-body">De retour au pays, il devient avocat et professeur à l'Université Cheikh Anta Diop. Il plaide notamment pour Mamadou Dia — président du Conseil accusé en 1962 — et pour son propre père, tirailleur sans pension.</div>
+      </div>
+
+      <div class="tl-item" data-cat="politique">
+        <div class="tl-dot politique"></div>
+        <div class="tl-tag politique">Engagement</div>
+        <div class="tl-year">1971</div>
+        <div class="tl-head">Entrée en politique sous la bannière de l'UPS</div>
+        <div class="tl-body">Wade crée un courant interne avant de convaincre Senghor, avec la ruse du « Ndiomboor », d'élargir le champ politique sénégalais. La démocratie gagne en espace grâce à lui.</div>
+      </div>
+
+      <div class="tl-item" data-cat="politique">
+        <div class="tl-dot politique"></div>
+        <div class="tl-tag politique">Fondation</div>
+        <div class="tl-year">1974</div>
+        <div class="tl-head">Naissance du Parti Démocratique Sénégalais (PDS)</div>
+        <div class="tl-body">Wade lance le PDS, courant libéral. Deux ans plus tard, Senghor institue le multipartisme — première victoire politique de Wade, qui obtient la légalisation de son parti.</div>
+      </div>
+
+      <div class="tl-item" data-cat="politique">
+        <div class="tl-dot politique"></div>
+        <div class="tl-tag politique">Opposition</div>
+        <div class="tl-year">1978 · 1983 · 1988 · 1993</div>
+        <div class="tl-head">Quatre défaites électorales — et autant de leçons</div>
+        <div class="tl-body">Emprisonné, exilé, brisé financièrement — Wade ne capitule jamais. Vingt-six ans à faire face au rouleau compresseur du Parti Socialiste. La résilience comme doctrine, l'opposition comme métier.</div>
+      </div>
+
+      <div class="tl-item" data-cat="pouvoir">
+        <div class="tl-dot pouvoir"></div>
+        <div class="tl-tag pouvoir">Victoire historique</div>
+        <div class="tl-year">19 mars 2000</div>
+        <div class="tl-head">Le Sopi balaie quarante ans de socialisme</div>
+        <div class="tl-body">À 74 ans, porté par la jeunesse et les partis de gauche qui l'ont ramené de son exil à Versailles, Wade remporte l'élection présidentielle. C'est la première alternance démocratique au Sénégal. L'Afrique entière retient son souffle.</div>
+      </div>
+
+      <div class="tl-item" data-cat="realisation">
+        <div class="tl-dot realisation"></div>
+        <div class="tl-tag realisation">Bâtisseur</div>
+        <div class="tl-year">2000–2012</div>
+        <div class="tl-head">Douze ans de béton et de rêves</div>
+        <div class="tl-body">Autoroute à péage, aéroport international Blaise Diagne, Monument de la Renaissance africaine, cases des tout-petits, universités régionales, route de la Corniche. Wade plante des jalons pour le XXIe siècle.</div>
+      </div>
+
+      <div class="tl-item" data-cat="realisation">
+        <div class="tl-dot realisation"></div>
+        <div class="tl-tag realisation">Démocratie</div>
+        <div class="tl-year">2001</div>
+        <div class="tl-head">La loi sur la parité et les libertés</div>
+        <div class="tl-body">Liberté de la presse, liberté de manifester, droit de grève avec port du brassard rouge, et la loi sur la parité homme-femme dans les listes électorales — un saut démocratique majeur.</div>
+      </div>
+
+      <div class="tl-item" data-cat="chute">
+        <div class="tl-dot chute"></div>
+        <div class="tl-tag chute">Tournant</div>
+        <div class="tl-year">23 juin 2011</div>
+        <div class="tl-head">Le 23-Juin : le peuple se lève contre lui</div>
+        <div class="tl-body">La tentative de modifier la Constitution pour faciliter une dévolution du pouvoir à son fils Karim déclenche une explosion populaire. Le « père de l'alternance » est devenu ce qu'il combattait.</div>
+      </div>
+
+      <div class="tl-item" data-cat="chute">
+        <div class="tl-dot chute"></div>
+        <div class="tl-tag chute">Alternance II</div>
+        <div class="tl-year">2012</div>
+        <div class="tl-head">Défaite face à son ancien Premier ministre Macky Sall</div>
+        <div class="tl-body">Macky Sall — qu'il avait lui-même formé et nommé — le bat au second tour. Wade cède le pouvoir dans le calme, préservant l'essentiel : l'image démocratique du Sénégal.</div>
+      </div>
+
+      <div class="tl-item" data-cat="chute">
+        <div class="tl-dot chute"></div>
+        <div class="tl-tag chute">Centenaire</div>
+        <div class="tl-year">29 mai 2026</div>
+        <div class="tl-head">100 ans — et toujours debout</div>
+        <div class="tl-body">Atteindre le cap du centenaire tout en restant une figure tutélaire de la vie politique sénégalaise relève du mythe. Car pour Abdoulaye Wade, l'ambition n'a pas de date de péremption.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- REALISATIONS -->
+<section id="realisations">
+  <div class="container">
+    <div class="section-tag">Grandes réalisations</div>
+    <h2 class="section-title">Les œuvres d'un bâtisseur visionnaire</h2>
+    <p class="section-lead">En douze ans, Wade a transformé le visage du Sénégal. Voici les héritages les plus marquants qu'il lègue aux générations futures.</p>
+    <div class="real-grid">
+
+      <div class="real-card">
+        <div class="real-icon">🏗️</div>
+        <div class="real-title">L'Autoroute à péage Dakar–Diamniadio</div>
+        <div class="real-body">Première autoroute moderne du Sénégal, elle désenclave la région dakaroise et symbolise l'ambition infrastructurelle de Wade pour un pays en marche.</div>
+        <div class="real-stat">⚡ Infrastructure → Compétitivité nationale</div>
+      </div>
+
+      <div class="real-card or">
+        <div class="real-icon">✈️</div>
+        <div class="real-title">Aéroport International Blaise Diagne (AIBD)</div>
+        <div class="real-body">Conçu pour accueillir 3 millions de passagers/an, il remplace l'aéroport Léopold Sédar Senghor et positionne Dakar comme hub aérien de l'Afrique de l'Ouest.</div>
+        <div class="real-stat" style="color:var(--or-fonce)">🌍 Ouverture → Hub régional</div>
+      </div>
+
+      <div class="real-card rouge">
+        <div class="real-icon">🗿</div>
+        <div class="real-title">Monument de la Renaissance Africaine</div>
+        <div class="real-body">Haute de 49 mètres, cette sculpture de bronze domine Dakar et affirme la fierté du continent. Controversée mais symboliquement puissante : l'Afrique qui se lève.</div>
+        <div class="real-stat" style="color:var(--rouge)">🎨 Identité → Fierté continentale</div>
+      </div>
+
+      <div class="real-card">
+        <div class="real-icon">🏫</div>
+        <div class="real-title">Cases des Tout-Petits & Universités</div>
+        <div class="real-body">Des milliers de structures d'accueil pour la petite enfance et de nouvelles universités régionales (Ziguinchor, Thiès, Bambey). L'éducation comme levier de développement.</div>
+        <div class="real-stat">📚 Éducation → Capital humain</div>
+      </div>
+
+      <div class="real-card or">
+        <div class="real-icon">🏥</div>
+        <div class="real-title">Plan Sésame & Couverture Santé</div>
+        <div class="real-body">Gratuité des soins pour les personnes âgées de plus de 60 ans. Une mesure sociale emblématique qui ancre le respect des aînés dans la politique publique.</div>
+        <div class="real-stat" style="color:var(--or-fonce)">❤️ Solidarité → Justice sociale</div>
+      </div>
+
+      <div class="real-card">
+        <div class="real-icon">⚖️</div>
+        <div class="real-title">Loi sur la Parité Homme–Femme</div>
+        <div class="real-body">Première en Afrique subsaharienne : alternance stricte homme-femme dans les listes électorales. Le Sénégal devient un modèle de représentation politique féminine sur le continent.</div>
+        <div class="real-stat">♀ Égalité → Modèle africain</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CITATIONS -->
+<section id="citations">
+  <div class="container">
+    <div class="section-tag">Sagesse & Citations</div>
+    <h2 class="section-title">Les mots qui traversent le temps</h2>
+    <p class="section-lead">Des paroles d'Abdoulaye Wade aux grandes voix de l'humanité — choisissez votre source d'inspiration.</p>
+
+    <div class="cit-nav">
+      <button class="cit-btn active" onclick="showCit('wade',this)">Wade lui-même</button>
+      <button class="cit-btn" onclick="showCit('africains',this)">Leaders africains</button>
+      <button class="cit-btn" onclick="showCit('philosophes',this)">Philosophes</button>
+      <button class="cit-btn" onclick="showCit('moraux',this)">Sagesse universelle</button>
+      <button class="cit-btn" onclick="showCit('religieux',this)">Spiritualité</button>
+    </div>
+
+    <div class="cit-carousel">
+
+      <div class="cit-slide active" id="cit-wade">
+        <div class="cit-card">
+          <div class="cit-text">« Il n'y a pas de secret. Il faut travailler, beaucoup travailler, toujours travailler. »</div>
+          <div class="cit-author">
+            <div class="cit-avatar wade">AW</div>
+            <div><div class="cit-name">Abdoulaye Wade</div><div class="cit-role">Prestation de serment populaire, Stade de l'Amitié, Dakar — 2000</div></div>
+          </div>
+          <div class="cit-context"><strong>Leçon :</strong> Le succès n'est pas un don du ciel. C'est le fruit d'un effort inlassable. Wade lui-même en est la preuve vivante — 26 ans d'opposition avant la victoire.</div>
+        </div>
+        <br>
+        <div class="cit-card">
+          <div class="cit-text">« Un homme doit être ambitieux, à condition d'éviter la prétention — cette disproportion entre les aspirations et les moyens. »</div>
+          <div class="cit-author">
+            <div class="cit-avatar wade">AW</div>
+            <div><div class="cit-name">Abdoulaye Wade</div><div class="cit-role">Sur la philosophie de l'ambition</div></div>
+          </div>
+          <div class="cit-context"><strong>Leçon :</strong> L'ambition est le moteur du succès — mais elle se construit pierre à pierre, avec méthode. La prétention est l'ennemi de la réussite durable.</div>
+        </div>
+        <br>
+        <div class="cit-card">
+          <div class="cit-text">« L'éducation traditionnelle est dangereuse quand elle écrase l'ambition. La société moderne exige de libérer les individus pour qu'ils donnent le maximum. »</div>
+          <div class="cit-author">
+            <div class="cit-avatar wade">AW</div>
+            <div><div class="cit-name">Abdoulaye Wade</div><div class="cit-role">Sur la rupture sociologique et l'éducation</div></div>
+          </div>
+          <div class="cit-context"><strong>Pour les jeunes :</strong> Ne laissez pas les conventions sociales éteindre votre curiosité. La question qui dérange est souvent celle qui ouvre les horizons.</div>
+        </div>
+      </div>
+
+      <div class="cit-slide" id="cit-africains">
+        <div class="cit-card">
+          <div class="cit-text">« L'éducation est l'arme la plus puissante que vous puissiez utiliser pour changer le monde. »</div>
+          <div class="cit-author">
+            <div class="cit-avatar mandela">NM</div>
+            <div><div class="cit-name">Nelson Mandela</div><div class="cit-role">Président de l'Afrique du Sud, Prix Nobel de la Paix 1993</div></div>
+          </div>
+          <div class="cit-context"><strong>Lien avec Wade :</strong> Comme Mandela, Wade a su que la formation intellectuelle — son double doctorat, ses années à Paris — était le fondement de toute action politique durable.</div>
+        </div>
+        <br>
+        <div class="cit-card">
+          <div class="cit-text">« La négritude n'est pas une tour d'ivoire. C'est une prise de position, un engagement. »</div>
+          <div class="cit-author">
+            <div class="cit-avatar senghor">LS</div>
+            <div><div class="cit-name">Léopold Sédar Senghor</div><div class="cit-role">Poète, 1er Président du Sénégal — adversaire et mentor de Wade</div></div>
+          </div>
+          <div class="cit-context"><strong>L'ironie de l'histoire :</strong> Senghor, qui surnomma Wade « le Lièvre », lui ouvrit la voie du multipartisme. Deux géants, un seul Sénégal.</div>
+        </div>
+        <br>
+        <div class="cit-card">
+          <div class="cit-text">« L'Afrique est la terre de l'avenir. Nous devons nous battre pour que cet avenir soit le nôtre. »</div>
+          <div class="cit-author">
+            <div class="cit-avatar african">KN</div>
+            <div><div class="cit-name">Kwame Nkrumah</div><div class="cit-role">Père de l'indépendance du Ghana, Panafricaniste</div></div>
+          </div>
+          <div class="cit-context"><strong>Wade & le panafricanisme :</strong> Le Monument de la Renaissance africaine, controversé mais puissant, incarne précisément cette vision : l'Afrique qui se lève et revendique son avenir.</div>
+        </div>
+      </div>
+
+      <div class="cit-slide" id="cit-philosophes">
+        <div class="cit-card">
+          <div class="cit-text">« Ce n'est pas parce que les choses sont difficiles que nous n'osons pas, c'est parce que nous n'osons pas qu'elles sont difficiles. »</div>
+          <div class="cit-author">
+            <div class="cit-avatar philo">SN</div>
+            <div><div class="cit-name">Sénèque</div><div class="cit-role">Philosophe stoïcien romain, ~4 av. J.-C. – 65 apr. J.-C.</div></div>
+          </div>
+          <div class="cit-context"><strong>L'esprit de Wade :</strong> Quatre défaites électorales. Des emprisonnements. L'exil. Et à 74 ans, la victoire. Wade a prouvé que l'audace finit toujours par triompher de l'adversité.</div>
+        </div>
+        <br>
+        <div class="cit-card">
+          <div class="cit-text">« Je ne connais qu'un seul devoir, et c'est celui d'aimer. »</div>
+          <div class="cit-author">
+            <div class="cit-avatar philo">AC</div>
+            <div><div class="cit-name">Albert Camus</div><div class="cit-role">Écrivain philosophe, Prix Nobel de Littérature 1957</div></div>
+          </div>
+          <div class="cit-context"><strong>Pour les bâtisseurs :</strong> Derrière chaque grande réalisation — une autoroute, une université, une loi sur la parité — il y a un acte d'amour pour un peuple et un avenir commun.</div>
+        </div>
+        <br>
+        <div class="cit-card">
+          <div class="cit-text">« La vie n'est pas un problème à résoudre, mais une réalité à expérimenter. »</div>
+          <div class="cit-author">
+            <div class="cit-avatar philo">SK</div>
+            <div><div class="cit-name">Søren Kierkegaard</div><div class="cit-role">Philosophe existentialiste danois, 1813–1855</div></div>
+          </div>
+          <div class="cit-context"><strong>Wade & l'expérience :</strong> Cent ans de vie ne s'expliquent pas — ils se vivent. Wade n'a pas suivi un plan ; il a navigué, souffert, bâti et triomphé.</div>
+        </div>
+      </div>
+
+      <div class="cit-slide" id="cit-moraux">
+        <div class="cit-card">
+          <div class="cit-text">« La persévérance, c'est ce qui rend l'impossible possible, le possible probable, et le probable réalisé. »</div>
+          <div class="cit-author">
+            <div class="cit-avatar moral">RL</div>
+            <div><div class="cit-name">Robert Half</div><div class="cit-role">Entrepreneur et penseur américain</div></div>
+          </div>
+          <div class="cit-context"><strong>La leçon de Wade :</strong> Vingt-six ans à essuyer des défaites. À 74 ans, la victoire. L'impossible est simplement ce qui n'a pas encore été assez voulu.</div>
+        </div>
+        <br>
+        <div class="cit-card">
+          <div class="cit-text">« On reconnaît un homme à ce qu'il fait quand il a tout perdu. »</div>
+          <div class="cit-author">
+            <div class="cit-avatar moral">SM</div>
+            <div><div class="cit-name">Sagesse populaire africaine</div><div class="cit-role">Tradition orale, Afrique de l'Ouest</div></div>
+          </div>
+          <div class="cit-context"><strong>Application directe :</strong> Après la défaite de 2012, Wade quitte le pouvoir dans le calme. La grandeur d'un homme se mesure aussi à sa dignité dans la chute.</div>
+        </div>
+        <br>
+        <div class="cit-card">
+          <div class="cit-text">« L'ambition est la dernière refuge de l'échec. »</div>
+          <div class="cit-author">
+            <div class="cit-avatar moral">OW</div>
+            <div><div class="cit-name">Oscar Wilde</div><div class="cit-role">Écrivain irlandais, 1854–1900</div></div>
+          </div>
+          <div class="cit-context"><strong>Nuance de Wade :</strong> Wade distinguait l'ambition (désir de bien faire) de la prétention (excès non fondé). L'ambition juste, construite sur le mérite, est le moteur de la civilisation.</div>
+        </div>
+      </div>
+
+      <div class="cit-slide" id="cit-religieux">
+        <div class="cit-card">
+          <div class="cit-text">« Dieu ne change pas l'état d'un peuple tant que ce peuple ne change pas ce qui est en lui-même. »</div>
+          <div class="cit-author">
+            <div class="cit-avatar senghor">☪</div>
+            <div><div class="cit-name">Le Saint Coran</div><div class="cit-role">Sourate Ar-Ra'd, verset 11</div></div>
+          </div>
+          <div class="cit-context"><strong>Le Sopi en profondeur :</strong> « Sopi » signifie le changement. Wade n'appelait pas à attendre que le ciel change les choses — il appelait son peuple à se transformer lui-même. Ce verset en est la fondation spirituelle.</div>
+        </div>
+        <br>
+        <div class="cit-card">
+          <div class="cit-text">« La foi sans les œuvres est morte. »</div>
+          <div class="cit-author">
+            <div class="cit-avatar moral">✝</div>
+            <div><div class="cit-name">L'Épître de Jacques</div><div class="cit-role">Bible, Nouveau Testament — Jacques 2:26</div></div>
+          </div>
+          <div class="cit-context"><strong>Le bâtisseur :</strong> Wade n'a pas seulement rêvé un Sénégal meilleur — il a construit. Autoroutes, aéroports, universités, cas des tout-petits. La foi dans l'avenir s'exprime par les actes.</div>
+        </div>
+        <br>
+        <div class="cit-card">
+          <div class="cit-text">« Xam xam moy dëkk » — Le savoir est une patrie.</div>
+          <div class="cit-author">
+            <div class="cit-avatar african">🌍</div>
+            <div><div class="cit-name">Proverbe wolof</div><div class="cit-role">Tradition orale sénégalaise</div></div>
+          </div>
+          <div class="cit-context"><strong>Wade & le savoir :</strong> Docteur en économie, docteur en droit, avocat, professeur — Wade a fait du savoir sa première patrie avant même de briguer la présidence. L'exemple reste entier.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- LEÇONS DE VIE -->
+<section id="lecons">
+  <div class="container">
+    <div class="section-tag">Leçons de vie</div>
+    <h2 class="section-title">Ce que sa vie enseigne à chacun</h2>
+    <p class="section-lead">Pour le jeune Sénégalais, l'homme d'affaires, le politicien ou le journaliste — les vérités universelles tirées d'un siècle d'existence.</p>
+
+    <div class="lecon-tabs">
+      <button class="lecon-tab active" onclick="showLecon('resilience',this)">Résilience</button>
+      <button class="lecon-tab" onclick="showLecon('ambition',this)">Ambition</button>
+      <button class="lecon-tab" onclick="showLecon('savoir',this)">Savoir</button>
+      <button class="lecon-tab" onclick="showLecon('leadership',this)">Leadership</button>
+      <button class="lecon-tab" onclick="showLecon('erreurs',this)">Leçons de ses erreurs</button>
+    </div>
+
+    <div class="lecon-panel active" id="lecon-resilience">
+      <div class="lecon-card">
+        <div class="lecon-num">01</div>
+        <div class="lecon-title">Ne jamais confondre défaite et échec</div>
+        <div class="lecon-body">Wade a perdu quatre élections présidentielles (1978, 1983, 1988, 1993). Chaque défaite électorale était une leçon, pas une conclusion. L'échec, c'est quand on cesse d'apprendre de ses défaites.</div>
+      </div>
+      <div class="lecon-card">
+        <div class="lecon-num">02</div>
+        <div class="lecon-title">Transformer l'adversité en carburant</div>
+        <div class="lecon-body">La prison, l'exil, la ruine financière. Toutes ces épreuves n'ont fait que durcir sa détermination. L'adversité n'est pas un obstacle au chemin — elle EST le chemin.</div>
+      </div>
+      <div class="lecon-card">
+        <div class="lecon-num">03</div>
+        <div class="lecon-title">L'ambition n'a pas de date de péremption</div>
+        <div class="lecon-body">Présider son pays à 74 ans, après des décennies d'opposition. Wade prouve que l'âge n'est qu'un chiffre. Ce qui compte : la clarté de la vision et la force de la conviction.</div>
+      </div>
+      <div class="lecon-card">
+        <div class="lecon-num">04</div>
+        <div class="lecon-title">La constance distingue les grands hommes</div>
+        <div class="lecon-body">Vingt-six ans dans l'opposition sans jamais trahir son idéal libéral. Dans un monde qui récompense la versatilité opportuniste, la constance dans ses valeurs est une forme de courage rare.</div>
+      </div>
+    </div>
+
+    <div class="lecon-panel" id="lecon-ambition">
+      <div class="lecon-card">
+        <div class="lecon-num">01</div>
+        <div class="lecon-title">Distinguer ambition et prétention</div>
+        <div class="lecon-body">Wade définissait l'ambition comme le désir de bien faire et de se dépasser — jamais comme la recherche de privilèges. Vouloir sans mériter, c'est la prétention. Vouloir et travailler, c'est l'ambition.</div>
+      </div>
+      <div class="lecon-card">
+        <div class="lecon-num">02</div>
+        <div class="lecon-title">Rêver grand mais construire petit à petit</div>
+        <div class="lecon-body">Ses rêves — parfois trop grands pour ses caisses — ont néanmoins produit des réalisations concrètes. L'idéal sert de boussole; l'action quotidienne construit le chemin.</div>
+      </div>
+      <div class="lecon-card">
+        <div class="lecon-num">03</div>
+        <div class="lecon-title">Libérer le génie africain qui sommeille</div>
+        <div class="lecon-body">Wade combattait le « kërsa » — la pudeur excessive qui freine les vocations. Pour les jeunes Africains : la retenue culturelle est une valeur, mais pas une prison. Exprimez-vous, créez, osez.</div>
+      </div>
+      <div class="lecon-card">
+        <div class="lecon-num">04</div>
+        <div class="lecon-title">Le travail est l'unique secret</div>
+        <div class="lecon-body">« Il faut travailler, beaucoup travailler, toujours travailler. » Pas de formule magique. Wade, diplômé de trois établissements supérieurs, professeur, avocat, dirigeant d'un parti pendant des décennies — il a payé de sa personne.</div>
+      </div>
+    </div>
+
+    <div class="lecon-panel" id="lecon-savoir">
+      <div class="lecon-card">
+        <div class="lecon-num">01</div>
+        <div class="lecon-title">Le savoir est une arme, investissez-y tout</div>
+        <div class="lecon-body">Double doctorat, mathématiques, droit, économie. Treize ans d'études en France. Wade a compris que le savoir crédibilise et ouvre des portes fermées à ceux qui n'y ont pas accès.</div>
+      </div>
+      <div class="lecon-card">
+        <div class="lecon-num">02</div>
+        <div class="lecon-title">La polyvalence est une force stratégique</div>
+        <div class="lecon-body">Avocat ET économiste ET enseignant ET politicien. Chaque compétence renforçait l'autre. Dans le monde professionnel moderne, la transversalité est un avantage décisif.</div>
+      </div>
+      <div class="lecon-card">
+        <div class="lecon-num">03</div>
+        <div class="lecon-title">Ne jamais cesser d'apprendre</div>
+        <div class="lecon-body">À 100 ans, Wade reste un observateur actif de la vie politique africaine. L'apprentissage n'a pas de fin — les leaders qui ont cessé d'apprendre ont commencé à mourir politiquement.</div>
+      </div>
+      <div class="lecon-card">
+        <div class="lecon-num">04</div>
+        <div class="lecon-title">Le savoir sans valeurs ne suffit pas</div>
+        <div class="lecon-body">Les scandales financiers de ses dernières années rappellent que le diplôme ne suffit pas. L'éthique est le socle sur lequel le savoir doit reposer pour produire du bien commun.</div>
+      </div>
+    </div>
+
+    <div class="lecon-panel" id="lecon-leadership">
+      <div class="lecon-card">
+        <div class="lecon-num">01</div>
+        <div class="lecon-title">Le leadership se construit dans l'opposition</div>
+        <div class="lecon-body">Wade a forgé sa vision du Sénégal non pas au palais présidentiel, mais dans les salles de réunion clandestines, les cellules de prison et les forums d'opposition. Le vrai leader se définit avant d'accéder au pouvoir.</div>
+      </div>
+      <div class="lecon-card">
+        <div class="lecon-num">02</div>
+        <div class="lecon-title">Savoir créer des alliances improbables</div>
+        <div class="lecon-body">En 2000, les partis de gauche ont soutenu ce libéral pour battre le Parti Socialiste. Wade avait compris que l'ennemi de mon ennemi peut être mon allié — la politique est l'art du possible.</div>
+      </div>
+      <div class="lecon-card">
+        <div class="lecon-num">03</div>
+        <div class="lecon-title">Inspirer par la vision, pas seulement par la rhétorique</div>
+        <div class="lecon-body">Wade était un tribun — mais c'est sa vision futuriste du Sénégal qui a séduit les foules. Avoir un projet clair et concret pour les autres est la condition d'un leadership durable.</div>
+      </div>
+      <div class="lecon-card">
+        <div class="lecon-num">04</div>
+        <div class="lecon-title">Accepter sa défaite avec dignité</div>
+        <div class="lecon-body">En 2012, Wade a reconnu sa défaite et transmis le pouvoir pacifiquement à Macky Sall. Cette ultime démonstration de grandeur a préservé l'héritage démocratique qu'il avait mis trente ans à construire.</div>
+      </div>
+    </div>
+
+    <div class="lecon-panel" id="lecon-erreurs">
+      <div class="lecon-card">
+        <div class="lecon-num">01</div>
+        <div class="lecon-title">Le pouvoir absolu corrompt les meilleures intentions</div>
+        <div class="lecon-body">Le « père de l'alternance » a failli instaurer une transmission dynastique du pouvoir. Leçon : les valeurs qu'on défend dans l'opposition doivent rester intactes une fois au pouvoir.</div>
+      </div>
+      <div class="lecon-card">
+        <div class="lecon-num">02</div>
+        <div class="lecon-title">L'entourage peut être ta perte</div>
+        <div class="lecon-body">Les scandales financiers de son second mandat ont terni un bilan brillant. Choisir ses proches collaborateurs avec discernement est une compétence cruciale pour tout dirigeant.</div>
+      </div>
+      <div class="lecon-card">
+        <div class="lecon-num">03</div>
+        <div class="lecon-title">Ignorer la voix du peuple, c'est se condamner</div>
+        <div class="lecon-body">Le 23-juin 2011 a fracturé son règne. Quand le peuple descend dans la rue, un leader doit écouter — pas réprimer. Wade l'a appris trop tard dans son mandat.</div>
+      </div>
+      <div class="lecon-card">
+        <div class="lecon-num">04</div>
+        <div class="lecon-title">Savoir passer le témoin — c'est aussi un art</div>
+        <div class="lecon-body">Les grands hommes sont souvent ceux qui ont su préparer leur succession. Wade a eu du mal à lâcher prise. Former la prochaine génération est le testament d'un vrai leader.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARCOURS DE VIE -->
+<section id="parcours">
+  <div class="container">
+    <div class="section-tag">Parcours de vie</div>
+    <h2 class="section-title">Cinq chapitres d'une existence hors du commun</h2>
+    <p class="section-lead">Naviguez dans les grandes phases qui composent le roman d'une vie centenaire.</p>
+
+    <div class="pv-stepper">
+      <button class="pv-step-btn active" onclick="showPV(0,this)">L'Enfant de Kébémer</button>
+      <button class="pv-step-btn" onclick="showPV(1,this)">L'Étudiant de Paris</button>
+      <button class="pv-step-btn" onclick="showPV(2,this)">L'Opposant tenace</button>
+      <button class="pv-step-btn" onclick="showPV(3,this)">Le Président bâtisseur</button>
+      <button class="pv-step-btn" onclick="showPV(4,this)">La Légende vivante</button>
+    </div>
+
+    <div class="pv-content active" id="pv-0">
+      <div class="pv-visual">
+        <div class="pv-icon-big">🌱</div>
+        <div class="pv-visual-title">1926 – 1947</div>
+        <div class="pv-visual-sub">Kébémer, Sénégal colonial. Un enfant curieux, fils d'un tirailleur, qui refuse que le monde lui soit écrit d'avance.</div>
+      </div>
+      <div>
+        <div class="pv-text-title">L'Enfant de Kébémer qui voulait comprendre le monde</div>
+        <p class="pv-text-body">Né le 29 mai 1926 dans une famille modeste, Abdoulaye Wade grandit dans un Sénégal sous domination coloniale française. Son père, Momar Tola Wade, est tailleur et tirailleur — un homme de devoir qui lui transmettra l'exigence et la rigueur.</p>
+        <p class="pv-text-body">Dès l'école primaire de Kébémer, le jeune Abdoulaye montre une curiosité insatiable. Il questionne, il remet en cause, il cherche à comprendre. Un instinct naturel que l'éducation traditionnelle cherche parfois à étouffer — et que lui refusera toujours d'abandonner.</p>
+        <p class="pv-text-body">En 1947, il est diplômé de l'école William Ponty de Sébikotane — l'école des futures élites africaines — et obtient une bourse pour poursuivre ses études en France. Le monde s'ouvre. L'aventure commence.</p>
+        <div class="pv-highlight">💡 Pour les jeunes : votre curiosité est votre bien le plus précieux. Protégez-la, cultivez-la. Ceux qui cherchent à l'éteindre ne veulent pas votre grandeur.</div>
+      </div>
+    </div>
+
+    <div class="pv-content" id="pv-1">
+      <div class="pv-visual">
+        <div class="pv-icon-big">📚</div>
+        <div class="pv-visual-title">1947 – 1960</div>
+        <div class="pv-visual-sub">Paris, Grenoble, Besançon. Treize années de labeur acharné pour conquérir les savoirs de l'ancien empire.</div>
+      </div>
+      <div>
+        <div class="pv-text-title">L'Étudiant africain qui a bâti son arsenal intellectuel</div>
+        <p class="pv-text-body">Treize ans en France. Pas des années de plaisir ou de tourisme intellectuel — mais de travail forcené. Lycée Condorcet (mathématiques supérieures), puis double doctorat : en économie à Grenoble, en droit à Besançon.</p>
+        <p class="pv-text-body">À Besançon, il rencontre Viviane — celle qui sera sa compagne de vie, mère de Karim et Sindiély. L'amour naît dans les bibliothèques et les couloirs d'université. Une complicité qui traversera les décennies.</p>
+        <p class="pv-text-body">De retour au Sénégal, il devient avocat et professeur à l'Université Cheikh Anta Diop. Sa première grande cause : défendre son propre père, tirailleur de la Première Guerre mondiale sans pension ni médaille à cause d'une erreur administrative. Il plaidera jusqu'à obtenir gain de cause — la Croix de guerre et la Légion d'honneur, remises par Charles Hernu, ministre français de la Défense.</p>
+        <div class="pv-highlight">💡 Pour les professionnels : chaque compétence que vous acquérez est une arme supplémentaire. La polyvalence n'est pas un défaut — c'est un avantage stratégique durable.</div>
+      </div>
+    </div>
+
+    <div class="pv-content" id="pv-2">
+      <div class="pv-visual">
+        <div class="pv-icon-big">⚔️</div>
+        <div class="pv-visual-title">1974 – 2000</div>
+        <div class="pv-visual-sub">Vingt-six ans dans l'opposition. Prison, exil, défaites. Et pourtant — jamais une capitulation.</div>
+      </div>
+      <div>
+        <div class="pv-text-title">L'Opposant qui a fait de la résilience une doctrine</div>
+        <p class="pv-text-body">En 1974, Wade fonde le Parti Démocratique Sénégalais (PDS). Il convainc Senghor — avec la ruse du « Ndiomboor » — d'ouvrir le multipartisme. Première victoire politique, sans avoir gagné une élection.</p>
+        <p class="pv-text-body">Suivront quatre défaites électorales : 1978, 1983, 1988, 1993. Des crises profondes, des emprisonnements, des périodes d'exil à Versailles. Mais Wade ne cède jamais. Il fait de l'opposition un métier, de la résilience une doctrine, du « Sopi » un espoir collectif.</p>
+        <p class="pv-text-body">Ces années forgent l'homme autant que le politique. C'est dans l'adversité qu'il développe sa vision pour le Sénégal du XXIe siècle — nettement plus futuriste que celle de ses adversaires socialistes.</p>
+        <div class="pv-highlight">💡 Pour les entrepreneurs : les refus, les faillites, les portes fermées ne définissent pas votre destin — ils définissent votre trajectoire. Chaque non vous rapproche du oui décisif.</div>
+      </div>
+    </div>
+
+    <div class="pv-content" id="pv-3">
+      <div class="pv-visual">
+        <div class="pv-icon-big">🏛️</div>
+        <div class="pv-visual-title">2000 – 2012</div>
+        <div class="pv-visual-sub">Douze ans au pouvoir. Des ponts, des routes, des universités. Et aussi des erreurs qui ont terni l'éclat d'un bilan exceptionnel.</div>
+      </div>
+      <div>
+        <div class="pv-text-title">Le Président bâtisseur et ses contradictions</div>
+        <p class="pv-text-body">Le 19 mars 2000, le Sopi emporte tout. À 74 ans, Wade devient Président de la République. Il injecte un « coup de jeune » paradoxal : sa vision du Sénégal est la plus moderne, la plus audacieuse de toutes celles proposées depuis l'indépendance.</p>
+        <p class="pv-text-body">En douze ans : autoroute à péage, aéroport Blaise Diagne, Monument de la Renaissance africaine, universités régionales, cases des tout-petits, loi sur la parité, plan Sésame. Un bilan infrastructurel sans précédent dans l'histoire récente du Sénégal.</p>
+        <p class="pv-text-body">Mais son rapport à l'argent public, les scandales financiers et sa volonté de transmettre le pouvoir à son fils Karim fracturent son image. Le 23 juin 2011, le peuple descend dans la rue. En 2012, Macky Sall — son propre poulain — le bat. Il reconnaît sa défaite et part.</p>
+        <div class="pv-highlight">💡 Pour les dirigeants : votre héritage ne sera pas jugé seulement sur vos réussites, mais aussi sur l'intégrité avec laquelle vous les avez construites. L'éthique est la fondation de tout.</div>
+      </div>
+    </div>
+
+    <div class="pv-content" id="pv-4">
+      <div class="pv-visual">
+        <div class="pv-icon-big">🌟</div>
+        <div class="pv-visual-title">2012 – aujourd'hui</div>
+        <div class="pv-visual-sub">Cent ans. Toujours présent, toujours debout. La légende vivante d'un continent qui cherche ses modèles.</div>
+      </div>
+      <div>
+        <div class="pv-text-title">La Légende vivante — cent ans et un héritage intact</div>
+        <p class="pv-text-body">Après 2012, Wade ne disparaît pas de la scène. Il reste actif, observe, commente, guide son parti. Son héritage politique — l'alternance démocratique de 2000, les réalisations infrastructurelles, la loi sur la parité — reste ancré dans la mémoire collective sénégalaise.</p>
+        <p class="pv-text-body">Le 29 mai 2026, il célèbre ses 100 ans. Un siècle. Une vie qui embrasse l'Afrique coloniale, l'indépendance, la construction nationale, les premières alternances démocratiques et l'émergence de la nouvelle génération africaine.</p>
+        <p class="pv-text-body">Son vrai legs n'est pas une statue ou un bâtiment — c'est la preuve vivante qu'un Africain né pauvre peut, à force de travail, de savoir et de résilience, changer le cours de l'histoire de son pays.</p>
+        <div class="pv-highlight">💡 Pour tout le monde : votre vie est votre message. Ce que vous construisez, comment vous vous relevez, la dignité avec laquelle vous traversez les épreuves — c'est cela votre vrai héritage.</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div style="max-width:700px; margin:0 auto;">
+    <div class="footer-flag"><div></div><div style="background:#FDEF42"></div><div></div></div>
+    <p style="font-family:'Playfair Display',serif; font-size:1.2rem; color:rgba(255,255,255,0.7); margin-bottom:1rem; font-style:italic;">
+      « L'ambition n'a pas de date de péremption. »
+    </p>
+    <p>Cette page est un hommage pédagogique à <strong>Abdoulaye Wade</strong>, né le 29 mai 1926 à Kébémer, Sénégal.<br>
+    Conçue pour inspirer les jeunes générations et préserver la mémoire d'un siècle d'engagement.</p>
+    <p style="margin-top:1rem; font-size:0.75rem; opacity:0.4;">
+      République du Sénégal · Un Peuple, Un But, Une Foi
+    </p>
+  </div>
+</footer>
+
+<script>
+  function filterTL(cat, btn) {
+    document.querySelectorAll('.tl-filter').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.tl-item').forEach(item => {
+      if (cat === 'all' || item.dataset.cat === cat) {
+        item.classList.remove('hidden');
+      } else {
+        item.classList.add('hidden');
+      }
+    });
+  }
+
+  function showCit(id, btn) {
+    document.querySelectorAll('.cit-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.cit-slide').forEach(s => s.classList.remove('active'));
+    document.getElementById('cit-' + id).classList.add('active');
+  }
+
+  function showLecon(id, btn) {
+    document.querySelectorAll('.lecon-tab').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.lecon-panel').forEach(p => p.classList.remove('active'));
+    document.getElementById('lecon-' + id).classList.add('active');
+  }
+
+  function showPV(idx, btn) {
+    document.querySelectorAll('.pv-step-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.pv-content').forEach(c => c.classList.remove('active'));
+    document.getElementById('pv-' + idx).classList.add('active');
+  }
+
+  // Active nav on scroll
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 80) current = s.id;
+    });
+    navLinks.forEach(a => {
+      a.classList.remove('active');
+      if (a.getAttribute('href') === '#' + current) a.classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>
